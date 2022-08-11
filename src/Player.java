@@ -1,18 +1,17 @@
 public class Player {
     private String name;
-    private int faceValueTotal;
     private Board board;
     private Die[] dice;
     private Piece piece;
 
-    public Player() {
-        this.dice = new Die[2];
-        this.board = new Board();
+    public Player(Board board, Die[] dice) {
+        this.board = board;
+        this.dice = dice;
         this.piece = new Piece();
-        this.faceValueTotal = 0;
     }
 
     public void takeTurn() {
+        int faceValueTotal = 0;
         for(Die die: dice) {
             die.roll();
             faceValueTotal += die.getFaceValue();

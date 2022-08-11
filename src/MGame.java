@@ -8,8 +8,16 @@ public class MGame {
 
     public MGame() {
         this.dice = new Die[2];
+        for (int i = 0; i < dice.length; i++) {
+            dice[i] = new Die();
+        }
+
         this.board = new Board();
+
         this.players = new Player[8];
+        for (int i = 0; i < players.length; i++) {
+            players[i] = new Player(board, dice);
+        }
     }
 
     public void playGame() {

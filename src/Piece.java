@@ -1,6 +1,10 @@
 public class Piece {
     private Square location;
 
+    public Piece() {
+        this.location = new Square();
+    }
+
     public Square getLocation() {
         return this.location;
     }
